@@ -1,2 +1,9 @@
 # Silica-Chatbot
 A chatbot with a designated framework.
+
+## How it works:
+...
+## Dictionaries:
+...
+## External Links:
+...
