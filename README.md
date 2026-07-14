@@ -10,7 +10,7 @@ It runs inside a while loop. If user exchange greets, states mood, asks for help
 
 ## Dictionaries:
  ```python
-user = {"greetings": "Hello, how are you today?(Input 'help' for more information)", "sad": "You don't have to go through this alone, find someone who can help you IRL.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
+user = {"sad": "You don't have to go through this alone, find someone who can help you IRL.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
 For quitting : Type 'quit'"""}
 ```
 
