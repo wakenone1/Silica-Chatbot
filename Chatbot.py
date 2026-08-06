@@ -16,11 +16,11 @@ print("Hello, I am Silica. Your Pybot companion.")
 def typindicator():
     print("Typing", end="", flush=True)
     for i in range(4):
-        time.sleep(0.5)
+        time.sleep(0.25)
         print(".", end="", flush=True)
     print("\b\b\b\b\b\b\b\b\b \b\b\b\b\b\b\b\b\b", end="")
 
-user = {"sad": "You don't have to go through this alone, find someone who can help you in real life.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
+user = {"sad": "You don't have to go through this alone, find someone who can help you in real life.", "Any other": "If you need any other help, I am here.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
 For quitting : Type 'quit'"""}
 user_input = ""
 while True:
@@ -32,6 +32,9 @@ while True:
         bot_choice = rand.choice(greet_dict)
         typindicator()
         print(bot_choice)
+    elif "ok" in user_input.lower() or "alright" in user_input.lower():
+        typindicator()
+        print(user["Any other"])
     elif "sad" in user_input.lower() or "depressed" in user_input.lower():
         typindicator()
         print(user["sad"])
