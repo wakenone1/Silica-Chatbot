@@ -22,9 +22,10 @@ def typindicator():
 
 user = {"sad": "You don't have to go through this alone, find someone who can help you in real life.", "Any other": "If you need any other help, I am here.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
 For quitting : Type 'quit'"""}
+User = input("What do you want me to call you : ")
 user_input = ""
 while True:
-    user_input = input("User : ")
+    user_input = input(f"{User} : ")
     
 
     if "hi" in user_input.lower() or "hello" in user_input.lower() or "hey" in user_input.lower():
