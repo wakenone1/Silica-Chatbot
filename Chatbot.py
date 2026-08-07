@@ -54,7 +54,7 @@ while True:
         print()
         print(user["help"])
         print()
-    elif "quit" in user_input.lower():
+    elif "quit" in user_input.lower() or "exit" in user_input.lower() or "bye" in user_input.lower():
         typindicator()
         print("It was nice talking to you. Have a great day!")
         break
