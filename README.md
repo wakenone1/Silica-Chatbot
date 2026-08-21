@@ -1,4 +1,4 @@
-# Silica-Chatbot
+# Silica-Chatbot : Your Terminal AI Companion
 A chatbot with a designated framework. It's not an open model, there's no API. It works with only a few inputs. 
 
 ## How it works:
