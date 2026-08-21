@@ -2,15 +2,6 @@
 from datetime import datetime
 import time
 import random as rand
-class Robot:
-    def __init__(self, name, model, model_completeness):
-        self.name = name
-        self.model = model
-        self.model_completeness = model_completeness
-
-robot = Robot("Silica", "Version 0.0.0.1", "Incomplete" )
-print(f"Chatbot name : {robot.name}, {robot.model}, Model status: {robot.model_completeness}")
-print("Hello, I am Silica. Your Pybot companion.")
 
 # Effect Functions:
 def typindicator():
@@ -19,6 +10,22 @@ def typindicator():
         time.sleep(0.25)
         print(".", end="", flush=True)
     print("\b\b\b\b\b\b\b\b\b \b\b\b\b\b\b\b\b\b", end="")
+class Robot:
+    def __init__(self, name, model, model_completeness):
+        self.name = name
+        self.model = model
+        self.model_completeness = model_completeness
+
+robot = Robot("Silica", "Version 0.0.0.1", "Incomplete" )
+color_reset = '\033[0m'
+if robot.model_completeness == "Incomplete":
+    color = '\033[31m'
+elif robot.model_completeness == "Early Access":
+    color = '\033[33m'
+elif robot.model_completeness == "Complete":
+    color = '\033[32m'
+print(f"Chatbot name : {robot.name}, {'\033[33m'}{robot.model}{color_reset}, Model status: {color}{robot.model_completeness}{color_reset}")
+print("Hello, I am Silica. Your Pybot companion.")
 
 user = {"sad": "You don't have to go through this alone, find someone who can help you in real life.", "Any other": "If you need any other help, I am here.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
 For quitting : Type 'quit'"""}
