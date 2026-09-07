@@ -14,7 +14,7 @@ Go to Windows/MacOS/Linux Terminal and type:
 ```bash
 pip install requests
 ```
-Then type enter. It's used for pulling website requests. To acces "https://icanhazdadjoke.com" API. It's for loading dad joke. First API I've used in this program.
+Then type enter. It's used for pulling website requests. To acces "https://icanhazdadjoke.com" API. It's for loading dad jokes. First API I've used in this program.
 
 ## Dictionaries:
  ```python
