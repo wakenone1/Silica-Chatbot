@@ -2,6 +2,7 @@
 from datetime import datetime
 import time
 import random as rand
+import requests
 
 # Effect Functions:
 def typindicator():
@@ -10,13 +11,15 @@ def typindicator():
         time.sleep(0.25)
         print(".", end="", flush=True)
     print("\b\b\b\b\b\b\b\b\b \b\b\b\b\b\b\b\b\b", end="")
+
+#Robot Class
 class Robot:
     def __init__(self, name, model, model_completeness):
         self.name = name
         self.model = model
         self.model_completeness = model_completeness
 
-robot = Robot("Silica", "Version 0.0.0.1", "Incomplete" )
+robot = Robot("Silica", "Version 0.0.0.1", "Early Access" )
 color_reset = '\033[0m'
 if robot.model_completeness == "Incomplete":
     color = '\033[31m'
@@ -27,8 +30,22 @@ elif robot.model_completeness == "Complete":
 print(f"Chatbot name : {robot.name}, {'\033[33m'}{robot.model}{color_reset}, Model status: {color}{robot.model_completeness}{color_reset}")
 print("Hello, I am Silica. Your Pybot companion.")
 
+# Dad Joke API. This section of code has been fetched from Gemini. I was encountering errors while loading this, so used AI for help. :P
+def get_dad_joke():
+    url = "https://icanhazdadjoke.com/"
+    headers = {"Accept": "application/json"}
+    
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        joke_data = response.json()
+        return joke_data["joke"] # Hm, a new method...
+    else:
+        return "Could not load a dad joke right now."
+
 user = {"sad": "You don't have to go through this alone, find someone who can help you in real life.", "Any other": "If you need any other help, I am here.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
-For quitting : Type 'quit'"""}
+For quitting : Type 'quit',
+For joke : Type 'joke'"""}
 User = input("What do you want me to call you : ")
 mood = None
 user_input = ""
@@ -41,7 +58,7 @@ while True:
         bot_choice = rand.choice(greet_dict)
         typindicator()
         print(bot_choice)
-    elif "ok" in user_input.lower() or "alright" in user_input.lower():
+    elif "okay" in user_input.lower() or "alright" in user_input.lower():
         typindicator()
         print(user["Any other"])
     elif "sad" in user_input.lower() or "depressed" in user_input.lower():
@@ -76,6 +93,9 @@ while True:
         now = datetime.now()
         typindicator()
         print(now)
+    elif user_input.lower() == "joke":
+        typindicator()
+        print(get_dad_joke())
     elif "thank" in user_input.lower() or "thnx" in user_input.lower():
         typindicator()
         print("You're most welcome. If you need any other help, let me know.")
