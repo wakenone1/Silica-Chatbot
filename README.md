@@ -8,6 +8,14 @@ The dictionary contains inputs and replies.
 
 It runs inside a while loop. If user exchange greets, states mood, asks for help or tries to exit from the program, it replies. 
 
+## Before You Run The Program:
+Go to Windows/MacOS/Linux Terminal and type:
+
+```bash
+pip install requests
+```
+Then type enter. It's used for pulling website requests. To acces "https://icanhazdadjoke.com" API. It's for loading dad joke. First API I've used in this program.
+
 ## Dictionaries:
  ```python
 user = {"sad": "You don't have to go through this alone, find someone who can help you IRL.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
