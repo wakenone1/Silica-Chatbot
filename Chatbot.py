@@ -28,7 +28,8 @@ elif robot.model_completeness == "Early Access":
 elif robot.model_completeness == "Complete":
     color = '\033[32m'
 print(f"Chatbot name : {robot.name}, {'\033[33m'}{robot.model}{color_reset}, Model status: {color}{robot.model_completeness}{color_reset}")
-print("Hello, I am Silica. Your Pybot companion.")
+print("Hello, I am Silica. Your Pybot companion.") 
+print("You need an internet connection to use APIs.")
 
 # Dad Joke API. This section of code has been fetched from Gemini. I was encountering errors while loading this, so used AI for help. :P
 def get_dad_joke():
