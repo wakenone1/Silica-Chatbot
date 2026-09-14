@@ -28,8 +28,12 @@ elif robot.model_completeness == "Early Access":
 elif robot.model_completeness == "Complete":
     color = '\033[32m'
 print(f"Chatbot name : {robot.name}, {'\033[33m'}{robot.model}{color_reset}, Model status: {color}{robot.model_completeness}{color_reset}")
+time.sleep(1)
 print("Hello, I am Silica. Your Pybot companion.") 
-print("You need an internet connection to use APIs.")
+time.sleep(1)
+print("You need an internet connection to use APIs. Type 'help' if you need any. Enjoy!")
+time.sleep(2)
+print("Another thing, try to use one word each in every input so the program understands. ;) ")
 
 # Dad Joke API. This section of code has been fetched from Gemini. I was encountering errors while loading this, so used AI for help. :P
 def get_dad_joke():
@@ -44,7 +48,8 @@ def get_dad_joke():
     else:
         return "Could not load a dad joke right now."
 
-user = {"sad": "You don't have to go through this alone, find someone who can help you in real life.", "Any other": "If you need any other help, I am here.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """For time : Type 'time'
+user = {"sad": "You don't have to go through this alone, find someone who can help you in real life.", "Any other": "If you need any other help, I am here.", "tired": "Take some rest then.", "happy": "Oh, enjoy!", "angry": "Calm down, tiger! XD", "bored": "Go do something fun!", "help": """You can just exchange greetings and state your mood in simple English or use these to interact:
+For time : Type 'time'
 For quitting : Type 'quit',
 For joke : Type 'joke'"""}
 User = input("What do you want me to call you : ")
@@ -70,7 +75,7 @@ while True:
         typindicator()
         mood = "angry"
         print(user["angry"])
-    elif "happy" in user_input.lower() or "well" in user_input.lower() or "fine" in user_input.lower():
+    elif "happy" in user_input.lower() or "well" in user_input.lower() or "fine" in user_input.lower() or "great" in user_input.lower():
         typindicator()
         mood = "happy"
         print(user["happy"])
@@ -88,7 +93,7 @@ while True:
         print()
     elif "quit" in user_input.lower() or "exit" in user_input.lower() or "bye" in user_input.lower():
         typindicator()
-        print("It was nice talking to you. Have a great day!")
+        print("It was nice talking with you. Have a great day!")
         break
     elif "time" in user_input.lower():
         now = datetime.now()
@@ -100,6 +105,9 @@ while True:
     elif "thank" in user_input.lower() or "thnx" in user_input.lower():
         typindicator()
         print("You're most welcome. If you need any other help, let me know.")
+    elif "haha" in user_input.lower() or "lmao" in user_input.lower() or "lol" in user_input.lower():
+        typindicator()
+        print("Glad it made you laugh. :)")
     elif "mood" in user_input.lower():
         if "mood" != None:
             typindicator()
